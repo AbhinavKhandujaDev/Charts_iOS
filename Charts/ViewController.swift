@@ -10,57 +10,23 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var values : [CGFloat] = [2.8,12.44,33.5,4.5,9]
+    var barValues : [Double] = [10.8,12.44,33.5,14.5,19,100,10.8,12.44,33.5,14.5,19,100,10.8,12.44,33.5,14.5,19,100]
+    
+    @IBOutlet weak var barChartView: BarChartView!
     
     var spacing : CGFloat = 10
-    var cellWidth : CGFloat = 20
-
+    var cellWidth : CGFloat = 30
+    
+    let colors : [CGColor] = [#colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1),#colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)]
+    
     @IBOutlet weak var barChartCollView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-    }
-}
-
-extension ViewController : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return values.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "barCell", for: indexPath) as! CollectionViewCell
-        cell.roundCorners(corners: [.topLeft, .topRight], radius: cell.frame.width/2)
-        cell.barViewHeight.constant = CGFloat(values[indexPath.row]) * (cell.frame.height/100)
-        cell.layoutIfNeeded()
-        cell.barView.roundCorners(corners: [.topLeft, .topRight], radius: cell.frame.width/2)
-        return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: cellWidth, height: collectionView.frame.height)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return spacing
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-
-        let totalCellWidth = cellWidth * CGFloat(values.count)
-        let totalSpacingWidth = spacing * (CGFloat(values.count) - 1)
-        
-        if totalCellWidth+totalSpacingWidth > collectionView.frame.width {
-            return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        }
-
-        let leftInset = (collectionView.frame.width - CGFloat(totalCellWidth + totalSpacingWidth)) / 2
-        let rightInset = leftInset
-
-        return UIEdgeInsets(top: 0, left: leftInset, bottom: 0, right: rightInset)
+        barChartView.barValues = barValues
+        barChartView.colors = colors
+        barChartView.barCellWidth = 30
+        barChartView.barCellSpacing = spacing
     }
 }
 
@@ -70,6 +36,16 @@ extension UIView {
         let shapeLayer = CAShapeLayer()
         shapeLayer.path = maskPath.cgPath
         layer.mask = shapeLayer
+    }
+    
+    func setGradientColor(bounds : CGRect, colors: [CGColor]) {
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = bounds
+        gradientLayer.colors = colors
+//        gradientLayer.locations = [0.0, 0.5]
+        gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.0)
+        gradientLayer.endPoint = CGPoint(x: 1.0, y: 1.0)
+        layer.insertSublayer(gradientLayer, at: 0)
     }
 }
 

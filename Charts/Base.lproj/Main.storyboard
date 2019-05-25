@@ -19,43 +19,56 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="x4j-vd-gwi">
-                                <rect key="frame" x="16" y="222.5" width="343" height="222"/>
-                                <color key="backgroundColor" red="0.042693230074564791" green="0.4085162412861737" blue="0.95011104060913709" alpha="0.55998501712328763" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="16" y="192.5" width="343" height="222"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="222" id="iBZ-IW-QCE"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="laW-2X-Lnf">
-                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="itemSize" width="76" height="198"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="barCell" id="WOZ-Vh-DHH" customClass="CollectionViewCell" customModule="Charts" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <rect key="frame" x="0.0" y="12" width="76" height="198"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="76" height="198"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pU8-J5-Sct">
-                                                    <rect key="frame" x="0.0" y="20" width="50" height="30"/>
+                                                    <rect key="frame" x="0.0" y="168" width="76" height="30"/>
                                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="qty-M6-L0B"/>
                                                     </constraints>
                                                 </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="coK-Tf-A3q">
+                                                    <rect key="frame" x="7.5" y="0.0" width="61" height="61"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="coK-Tf-A3q" secondAttribute="height" multiplier="1:1" id="DTf-fg-sly"/>
+                                                        <constraint firstAttribute="width" constant="61" id="MoP-Px-iNZ"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </view>
                                         <color key="backgroundColor" red="0.95765256851457703" green="0.95765256851457703" blue="0.95765256851457703" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
+                                            <constraint firstItem="coK-Tf-A3q" firstAttribute="top" secondItem="WOZ-Vh-DHH" secondAttribute="top" id="0J6-m1-S2j"/>
                                             <constraint firstItem="pU8-J5-Sct" firstAttribute="width" secondItem="WOZ-Vh-DHH" secondAttribute="width" id="Kne-c0-IXs"/>
                                             <constraint firstAttribute="bottom" secondItem="pU8-J5-Sct" secondAttribute="bottom" id="aYq-Rg-3fr"/>
                                             <constraint firstItem="pU8-J5-Sct" firstAttribute="centerX" secondItem="WOZ-Vh-DHH" secondAttribute="centerX" id="mbM-xM-3PU"/>
+                                            <constraint firstItem="coK-Tf-A3q" firstAttribute="centerX" secondItem="WOZ-Vh-DHH" secondAttribute="centerX" id="npm-NR-xOg"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="barView" destination="pU8-J5-Sct" id="XFL-Li-yH6"/>
                                             <outlet property="barViewHeight" destination="qty-M6-L0B" id="BwS-c1-qAI"/>
+                                            <outlet property="valueLabel" destination="coK-Tf-A3q" id="Cwg-qE-yhY"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -64,17 +77,34 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="RZC-32-BxX"/>
                                 </connections>
                             </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZYP-TO-ypQ" customClass="BarChartView" customModule="Charts" customModuleProvider="target">
+                                <rect key="frame" x="16" y="232.5" width="343" height="222"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="222" id="Lqk-n5-UuF"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="ZYP-TO-ypQ" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="16D-zG-oLe"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZYP-TO-ypQ" secondAttribute="trailing" constant="16" id="VxM-AO-Oee"/>
+                            <constraint firstItem="ZYP-TO-ypQ" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="WWQ-IG-iZo"/>
+                            <constraint firstItem="ZYP-TO-ypQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="YHX-7u-pXk"/>
                             <constraint firstItem="x4j-vd-gwi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="YNV-Ug-aHI"/>
-                            <constraint firstItem="x4j-vd-gwi" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="hK0-aY-dpf"/>
+                            <constraint firstItem="x4j-vd-gwi" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-30" id="hK0-aY-dpf"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="x4j-vd-gwi" secondAttribute="trailing" constant="16" id="khq-RK-jzk"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="x4j-vd-gwi"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="barChartCollView" destination="x4j-vd-gwi" id="71u-HT-kVI"/>
+                        <outlet property="barChartView" destination="ZYP-TO-ypQ" id="9VD-ez-BRJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

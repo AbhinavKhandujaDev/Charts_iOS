@@ -13,6 +13,10 @@
 		1C7352372296FD9B00690A1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C7352362296FD9B00690A1F /* Assets.xcassets */; };
 		1C73523A2296FD9B00690A1F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C7352382296FD9B00690A1F /* LaunchScreen.storyboard */; };
 		1C7352422297187100690A1F /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7352412297187100690A1F /* CollectionViewCell.swift */; };
+		1CDBC6812299739200D19EDE /* BarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDBC6802299739200D19EDE /* BarChartView.swift */; };
+		1CDBC683229973AC00D19EDE /* BarChart.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CDBC682229973AC00D19EDE /* BarChart.xib */; };
+		1CDBC6862299743800D19EDE /* BarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDBC6842299743800D19EDE /* BarCollectionViewCell.swift */; };
+		1CDBC6872299743800D19EDE /* BarCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CDBC6852299743800D19EDE /* BarCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		1C7352392296FD9B00690A1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1C73523B2296FD9B00690A1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1C7352412297187100690A1F /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		1CDBC6802299739200D19EDE /* BarChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartView.swift; sourceTree = "<group>"; };
+		1CDBC682229973AC00D19EDE /* BarChart.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BarChart.xib; sourceTree = "<group>"; };
+		1CDBC6842299743800D19EDE /* BarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarCollectionViewCell.swift; sourceTree = "<group>"; };
+		1CDBC6852299743800D19EDE /* BarCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BarCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +64,7 @@
 		1C73522E2296FD9900690A1F /* Charts */ = {
 			isa = PBXGroup;
 			children = (
+				1CDBC67E2299735500D19EDE /* Charts */,
 				1C73522F2296FD9900690A1F /* AppDelegate.swift */,
 				1C7352312296FD9900690A1F /* ViewController.swift */,
 				1C7352332296FD9900690A1F /* Main.storyboard */,
@@ -65,6 +74,33 @@
 				1C73523B2296FD9B00690A1F /* Info.plist */,
 			);
 			path = Charts;
+			sourceTree = "<group>";
+		};
+		1CDBC67E2299735500D19EDE /* Charts */ = {
+			isa = PBXGroup;
+			children = (
+				1CDBC67F2299737200D19EDE /* BarChart */,
+			);
+			path = Charts;
+			sourceTree = "<group>";
+		};
+		1CDBC67F2299737200D19EDE /* BarChart */ = {
+			isa = PBXGroup;
+			children = (
+				1CDBC6802299739200D19EDE /* BarChartView.swift */,
+				1CDBC682229973AC00D19EDE /* BarChart.xib */,
+				1CDBC6882299744100D19EDE /* BarCell */,
+			);
+			path = BarChart;
+			sourceTree = "<group>";
+		};
+		1CDBC6882299744100D19EDE /* BarCell */ = {
+			isa = PBXGroup;
+			children = (
+				1CDBC6842299743800D19EDE /* BarCollectionViewCell.swift */,
+				1CDBC6852299743800D19EDE /* BarCollectionViewCell.xib */,
+			);
+			path = BarCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,6 +161,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CDBC683229973AC00D19EDE /* BarChart.xib in Resources */,
+				1CDBC6872299743800D19EDE /* BarCollectionViewCell.xib in Resources */,
 				1C73523A2296FD9B00690A1F /* LaunchScreen.storyboard in Resources */,
 				1C7352372296FD9B00690A1F /* Assets.xcassets in Resources */,
 				1C7352352296FD9900690A1F /* Main.storyboard in Resources */,
@@ -141,6 +179,8 @@
 				1C7352322296FD9900690A1F /* ViewController.swift in Sources */,
 				1C7352302296FD9900690A1F /* AppDelegate.swift in Sources */,
 				1C7352422297187100690A1F /* CollectionViewCell.swift in Sources */,
+				1CDBC6812299739200D19EDE /* BarChartView.swift in Sources */,
+				1CDBC6862299743800D19EDE /* BarCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +329,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M46WLB93L8;
 				INFOPLIST_FILE = Charts/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -307,6 +348,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M46WLB93L8;
 				INFOPLIST_FILE = Charts/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
