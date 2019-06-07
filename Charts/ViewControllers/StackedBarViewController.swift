@@ -12,7 +12,7 @@ class StackedBarViewController: UIViewController {
 
     @IBOutlet weak var stackedBarView: StackedBarChartView!
     
-    var barVals : [[Double]] = [[100,100,100],
+    var barVals : [[Double]] = [[10.8,0,0.3],
                                 [10.8,12.44,100],
                                 [10.8,12.44,100],
                                 [100,100,100],
@@ -36,20 +36,15 @@ class StackedBarViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        var maxVal = [Double]()
+        barVals.forEach { (doubleArray) in
+            maxVal.append(doubleArray.max() ?? 0)
+        }
+        
         stackedBarView.stackedBarVals = barVals
         stackedBarView.barCellWidth = 40
         stackedBarView.barCellSpacing = spacing
+        stackedBarView.maxValue = maxVal.max()
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

@@ -31,18 +31,36 @@ class StackedBarCollectionViewCell: UICollectionViewCell {
     
     func setStacks(bottomStack : StackStruct, midStack : StackStruct, topStack : StackStruct) {
         if bottomStack.barValue != nil && bottomStack.maxValue != nil {
-            bottomBarHeight.constant = (CGFloat(bottomStack.barValue!) * (frame.height/bottomStack.maxValue!))/3
-            bottomValueLabel.text = "\(bottomStack.barValue ?? 0)"
+            if bottomStack.barValue == 0 {
+                bottomBarHeight.constant = 0
+                bottomValueLabel.isHidden = true
+            }else {
+                bottomBarHeight.constant = (CGFloat(bottomStack.barValue!) * (frame.height/(bottomStack.maxValue ?? 1)))/3
+                bottomValueLabel.text = "\(bottomStack.barValue ?? 0)"
+                bottomValueLabel.isHidden = false
+            }
         }
         
         if midStack.barValue != nil && midStack.maxValue != nil {
-            midBarHeight.constant = (CGFloat(midStack.barValue!) * (frame.height/midStack.maxValue!))/3
-            midValueLabel.text = "\(midStack.barValue ?? 0)"
+            if midStack.barValue == 0 {
+                midBarHeight.constant = 0
+                midValueLabel.isHidden = true
+            }else {
+                midBarHeight.constant = (CGFloat(midStack.barValue!) * (frame.height/midStack.maxValue!))/3
+                midValueLabel.text = "\(midStack.barValue ?? 0)"
+                midValueLabel.isHidden = false
+            }
         }
         
         if topStack.barValue != nil && topStack.maxValue != nil {
-            topBarHeight.constant = (CGFloat(topStack.barValue!) * (frame.height/topStack.maxValue!))/3
-            topValueLabel.text = "\(topStack.barValue ?? 0)"
+            if topStack.barValue == 0 {
+                topBarHeight.constant = 0
+                topValueLabel.isHidden = true
+            }else {
+                topBarHeight.constant = (CGFloat(topStack.barValue!) * (frame.height/topStack.maxValue!))/3
+                topValueLabel.text = "\(topStack.barValue ?? 0)"
+                topValueLabel.isHidden = false
+            }
         }
     }
 }

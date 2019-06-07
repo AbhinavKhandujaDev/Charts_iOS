@@ -22,7 +22,7 @@ class StackedBarChartView: UIView {
     
     var barCellWidth : CGFloat = 15.0
     
-    var isStacked : Bool = false
+    var maxValue : Double!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -59,9 +59,13 @@ extension StackedBarChartView : UICollectionViewDataSource, UICollectionViewDele
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "stackedBarCell", for: indexPath) as! StackedBarCollectionViewCell
         
-        let bStack = StackStruct(barValue: CGFloat(stackedBarVals[indexPath.row][0]), maxValue: CGFloat(stackedBarVals[indexPath.row].max()!))
-        let mStack = StackStruct(barValue: CGFloat(stackedBarVals[indexPath.row][1]), maxValue: CGFloat(stackedBarVals[indexPath.row].max()!))
-        let tStack = StackStruct(barValue: CGFloat(stackedBarVals[indexPath.row][2]), maxValue: CGFloat(stackedBarVals[indexPath.row].max()!))
+//        let bStack = StackStruct(barValue: CGFloat(stackedBarVals[indexPath.row][0]), maxValue: CGFloat(stackedBarVals[indexPath.row].max()!))
+//        let mStack = StackStruct(barValue: CGFloat(stackedBarVals[indexPath.row][1]), maxValue: CGFloat(stackedBarVals[indexPath.row].max()!))
+//        let tStack = StackStruct(barValue: CGFloat(stackedBarVals[indexPath.row][2]), maxValue: CGFloat(stackedBarVals[indexPath.row].max()!))
+        
+        let bStack = StackStruct(barValue: CGFloat(stackedBarVals[indexPath.row][0]), maxValue: CGFloat(maxValue))
+        let mStack = StackStruct(barValue: CGFloat(stackedBarVals[indexPath.row][1]), maxValue: CGFloat(maxValue))
+        let tStack = StackStruct(barValue: CGFloat(stackedBarVals[indexPath.row][2]), maxValue: CGFloat(maxValue))
         
         cell.setStacks(bottomStack: bStack, midStack: mStack, topStack: tStack)
         return cell
