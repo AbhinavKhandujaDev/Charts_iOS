@@ -53,7 +53,7 @@ class StackedBarChartView: UIView {
 
 extension StackedBarChartView : UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return stackedBarVals.count//barValues.count
+        return stackedBarVals.count //barValues.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -63,9 +63,13 @@ extension StackedBarChartView : UICollectionViewDataSource, UICollectionViewDele
 //        let mStack = StackStruct(barValue: CGFloat(stackedBarVals[indexPath.row][1]), maxValue: CGFloat(stackedBarVals[indexPath.row].max()!))
 //        let tStack = StackStruct(barValue: CGFloat(stackedBarVals[indexPath.row][2]), maxValue: CGFloat(stackedBarVals[indexPath.row].max()!))
         
-        let bStack = StackStruct(barValue: CGFloat(stackedBarVals[indexPath.row][0]), maxValue: CGFloat(maxValue))
-        let mStack = StackStruct(barValue: CGFloat(stackedBarVals[indexPath.row][1]), maxValue: CGFloat(maxValue))
-        let tStack = StackStruct(barValue: CGFloat(stackedBarVals[indexPath.row][2]), maxValue: CGFloat(maxValue))
+        let val1 : Double = (stackedBarVals[indexPath.row].indices.contains(0)) ? stackedBarVals[indexPath.row][0] : 0
+        let val2 : Double = (stackedBarVals[indexPath.row].indices.contains(1)) ? stackedBarVals[indexPath.row][1] : 0
+        let val3 : Double = (stackedBarVals[indexPath.row].indices.contains(2)) ? stackedBarVals[indexPath.row][2] : 0
+        
+        let bStack = StackStruct(barValue: CGFloat(val1), maxValue: CGFloat(maxValue))
+        let mStack = StackStruct(barValue: CGFloat(val2), maxValue: CGFloat(maxValue))
+        let tStack = StackStruct(barValue: CGFloat(val3), maxValue: CGFloat(maxValue))
         
         cell.setStacks(bottomStack: bStack, midStack: mStack, topStack: tStack)
         return cell
@@ -83,8 +87,8 @@ extension StackedBarChartView : UICollectionViewDataSource, UICollectionViewDele
         
         collectionView.collectionViewLayout.invalidateLayout()
         
-        let totalCellWidth = barCellWidth * CGFloat(stackedBarVals.count)
-        let totalSpacingWidth = barCellSpacing * (CGFloat(stackedBarVals.count) - 1)
+        let totalCellWidth = barCellWidth * CGFloat(stackedBarVals.count )
+        let totalSpacingWidth = barCellSpacing * (CGFloat(stackedBarVals.count ) - 1)
         
         if totalCellWidth+totalSpacingWidth > collectionView.frame.width {
             return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)

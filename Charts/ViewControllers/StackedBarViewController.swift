@@ -12,7 +12,7 @@ class StackedBarViewController: UIViewController {
 
     @IBOutlet weak var stackedBarView: StackedBarChartView!
     
-    var barVals : [[Double]] = [[10.8,0,0.3],
+    var barVals : [[Double]] = [[30,30],
                                 [10.8,12.44,100],
                                 [10.8,12.44,100],
                                 [100,100,100],
