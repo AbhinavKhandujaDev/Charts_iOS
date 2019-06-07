@@ -45,6 +45,7 @@ class BarChartView: UIView {
         barCollectionView.delegate = self
         barCollectionView.dataSource = self
         barCollectionView.register(UINib(nibName: "BarCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "barCell")
+        
     }
     
 }
@@ -64,7 +65,7 @@ extension BarChartView : UICollectionViewDataSource, UICollectionViewDelegate, U
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: barCellWidth, height: collectionView.frame.height)
+        return CGSize(width: barCellWidth, height: barCollectionView.frame.height - 64)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -72,6 +73,8 @@ extension BarChartView : UICollectionViewDataSource, UICollectionViewDelegate, U
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        
+        collectionView.collectionViewLayout.invalidateLayout()
         
         let totalCellWidth = barCellWidth * CGFloat(barValues.count)
         let totalSpacingWidth = barCellSpacing * (CGFloat(barValues.count) - 1)

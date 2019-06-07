@@ -13,6 +13,9 @@
 		1C7352372296FD9B00690A1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C7352362296FD9B00690A1F /* Assets.xcassets */; };
 		1C73523A2296FD9B00690A1F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C7352382296FD9B00690A1F /* LaunchScreen.storyboard */; };
 		1C7352422297187100690A1F /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7352412297187100690A1F /* CollectionViewCell.swift */; };
+		1C8849CB229AAFA800111D7D /* PieChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8849CA229AAFA800111D7D /* PieChartViewController.swift */; };
+		1C8849CD229AC12300111D7D /* DrawView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8849CC229AC12300111D7D /* DrawView.swift */; };
+		1C8849D0229AF3A700111D7D /* PieChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8849CF229AF3A700111D7D /* PieChartView.swift */; };
 		1CDBC6812299739200D19EDE /* BarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDBC6802299739200D19EDE /* BarChartView.swift */; };
 		1CDBC683229973AC00D19EDE /* BarChart.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CDBC682229973AC00D19EDE /* BarChart.xib */; };
 		1CDBC6862299743800D19EDE /* BarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDBC6842299743800D19EDE /* BarCollectionViewCell.swift */; };
@@ -28,6 +31,9 @@
 		1C7352392296FD9B00690A1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1C73523B2296FD9B00690A1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1C7352412297187100690A1F /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		1C8849CA229AAFA800111D7D /* PieChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartViewController.swift; sourceTree = "<group>"; };
+		1C8849CC229AC12300111D7D /* DrawView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawView.swift; sourceTree = "<group>"; };
+		1C8849CF229AF3A700111D7D /* PieChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartView.swift; sourceTree = "<group>"; };
 		1CDBC6802299739200D19EDE /* BarChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartView.swift; sourceTree = "<group>"; };
 		1CDBC682229973AC00D19EDE /* BarChart.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BarChart.xib; sourceTree = "<group>"; };
 		1CDBC6842299743800D19EDE /* BarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -67,6 +73,8 @@
 				1CDBC67E2299735500D19EDE /* Charts */,
 				1C73522F2296FD9900690A1F /* AppDelegate.swift */,
 				1C7352312296FD9900690A1F /* ViewController.swift */,
+				1C8849CA229AAFA800111D7D /* PieChartViewController.swift */,
+				1C8849CC229AC12300111D7D /* DrawView.swift */,
 				1C7352332296FD9900690A1F /* Main.storyboard */,
 				1C7352412297187100690A1F /* CollectionViewCell.swift */,
 				1C7352362296FD9B00690A1F /* Assets.xcassets */,
@@ -76,9 +84,18 @@
 			path = Charts;
 			sourceTree = "<group>";
 		};
+		1C8849CE229AF37900111D7D /* PieChart */ = {
+			isa = PBXGroup;
+			children = (
+				1C8849CF229AF3A700111D7D /* PieChartView.swift */,
+			);
+			path = PieChart;
+			sourceTree = "<group>";
+		};
 		1CDBC67E2299735500D19EDE /* Charts */ = {
 			isa = PBXGroup;
 			children = (
+				1C8849CE229AF37900111D7D /* PieChart */,
 				1CDBC67F2299737200D19EDE /* BarChart */,
 			);
 			path = Charts;
@@ -176,7 +193,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C8849D0229AF3A700111D7D /* PieChartView.swift in Sources */,
+				1C8849CB229AAFA800111D7D /* PieChartViewController.swift in Sources */,
 				1C7352322296FD9900690A1F /* ViewController.swift in Sources */,
+				1C8849CD229AC12300111D7D /* DrawView.swift in Sources */,
 				1C7352302296FD9900690A1F /* AppDelegate.swift in Sources */,
 				1C7352422297187100690A1F /* CollectionViewCell.swift in Sources */,
 				1CDBC6812299739200D19EDE /* BarChartView.swift in Sources */,

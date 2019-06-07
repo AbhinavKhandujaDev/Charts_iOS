@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TKn-4H-ru5">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,6 +10,55 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--View Controller-->
+        <scene sceneID="M7E-6Y-29B">
+            <objects>
+                <viewController id="dxu-ya-g1g" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="unh-Fq-lYe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="iBC-tD-XQ8">
+                                <rect key="frame" x="112.5" y="315.5" width="150" height="100"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uUB-bg-Xob">
+                                        <rect key="frame" x="0.0" y="0.0" width="150" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="OQV-oS-h5L"/>
+                                            <constraint firstAttribute="width" constant="150" id="o6W-GK-rcN"/>
+                                        </constraints>
+                                        <state key="normal" title="Bar Chart"/>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="show" id="Ppq-Sn-pp0"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vjc-7v-4tD">
+                                        <rect key="frame" x="0.0" y="60" width="150" height="40"/>
+                                        <state key="normal" title="Pie Chart"/>
+                                        <connections>
+                                            <segue destination="o15-tq-cVr" kind="show" id="f2n-hv-LaC"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="vjc-7v-4tD" firstAttribute="width" secondItem="uUB-bg-Xob" secondAttribute="width" id="l1A-L8-l55"/>
+                                    <constraint firstItem="vjc-7v-4tD" firstAttribute="height" secondItem="uUB-bg-Xob" secondAttribute="height" id="wZ9-VF-T5I"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="iBC-tD-XQ8" firstAttribute="centerY" secondItem="dpi-Pw-lXU" secondAttribute="centerY" id="l7Y-tJ-22E"/>
+                            <constraint firstItem="iBC-tD-XQ8" firstAttribute="centerX" secondItem="dpi-Pw-lXU" secondAttribute="centerX" id="tit-qg-4Su"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dpi-Pw-lXU"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="20m-MU-8i7"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TgW-0i-HfJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="23.199999999999999" y="148.87556221889056"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -78,10 +127,10 @@
                                 </connections>
                             </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZYP-TO-ypQ" customClass="BarChartView" customModule="Charts" customModuleProvider="target">
-                                <rect key="frame" x="16" y="232.5" width="343" height="222"/>
+                                <rect key="frame" x="16" y="115.5" width="343" height="500"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="222" id="Lqk-n5-UuF"/>
+                                    <constraint firstAttribute="height" constant="500" id="Lqk-n5-UuF"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -89,7 +138,6 @@
                         <constraints>
                             <constraint firstItem="ZYP-TO-ypQ" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="16D-zG-oLe"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZYP-TO-ypQ" secondAttribute="trailing" constant="16" id="VxM-AO-Oee"/>
-                            <constraint firstItem="ZYP-TO-ypQ" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="WWQ-IG-iZo"/>
                             <constraint firstItem="ZYP-TO-ypQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="YHX-7u-pXk"/>
                             <constraint firstItem="x4j-vd-gwi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="YNV-Ug-aHI"/>
                             <constraint firstItem="x4j-vd-gwi" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-30" id="hK0-aY-dpf"/>
@@ -109,7 +157,57 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+            <point key="canvasLocation" x="878" y="-296"/>
+        </scene>
+        <!--Pie Chart View Controller-->
+        <scene sceneID="tAh-1J-Pd3">
+            <objects>
+                <viewController id="o15-tq-cVr" customClass="PieChartViewController" customModule="Charts" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Tsw-sZ-qY7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iI7-qk-53g" customClass="PieChartView" customModule="Charts" customModuleProvider="target">
+                                <rect key="frame" x="16" y="222.5" width="343" height="222"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="222" id="1VB-eT-jEd"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="iI7-qk-53g" firstAttribute="centerY" secondItem="Tsw-sZ-qY7" secondAttribute="centerY" id="ASl-jO-hPF"/>
+                            <constraint firstItem="iI7-qk-53g" firstAttribute="leading" secondItem="Cwb-Zy-Ct8" secondAttribute="leading" constant="16" id="pwA-ot-tdY"/>
+                            <constraint firstItem="Cwb-Zy-Ct8" firstAttribute="trailing" secondItem="iI7-qk-53g" secondAttribute="trailing" constant="16" id="xHu-gx-Hkb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Cwb-Zy-Ct8"/>
+                    </view>
+                    <connections>
+                        <outlet property="pieChartView" destination="iI7-qk-53g" id="K6j-zr-bKv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aI9-fd-cCu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="878" y="619"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="9eM-2U-qI4">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TKn-4H-ru5" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ipJ-CV-Taz">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="dxu-ya-g1g" kind="relationship" relationship="rootViewController" id="ZCd-73-uHH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PeY-UY-DqV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-916" y="148.87556221889056"/>
         </scene>
     </scenes>
 </document>

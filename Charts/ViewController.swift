@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var barValues : [Double] = [10.8,12.44,33.5,14.5,19,100,10.8,12.44,33.5,14.5,19,100,10.8,12.44,33.5,14.5,19,100]
+    var barValues : [Double] = [10.8,12.44,33.5,14.5,19,100,10.8,12.44,33.5,14.5,19,100,10.8,12.44,33.5,14.5,19,100,10.8,12.44,33.5,14.5,19,100]
     
     @IBOutlet weak var barChartView: BarChartView!
     
