@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C35583F22AA5F7A0049B06D /* StackedBarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C35583D22AA5F7A0049B06D /* StackedBarCollectionViewCell.swift */; };
+		1C35584022AA5F7A0049B06D /* StackedBarCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C35583E22AA5F7A0049B06D /* StackedBarCollectionViewCell.xib */; };
+		1C35584222AA64460049B06D /* StackedBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C35584122AA64460049B06D /* StackedBarViewController.swift */; };
 		1C7352302296FD9900690A1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C73522F2296FD9900690A1F /* AppDelegate.swift */; };
 		1C7352322296FD9900690A1F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7352312296FD9900690A1F /* ViewController.swift */; };
 		1C7352352296FD9900690A1F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C7352332296FD9900690A1F /* Main.storyboard */; };
@@ -20,9 +23,14 @@
 		1CDBC683229973AC00D19EDE /* BarChart.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CDBC682229973AC00D19EDE /* BarChart.xib */; };
 		1CDBC6862299743800D19EDE /* BarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDBC6842299743800D19EDE /* BarCollectionViewCell.swift */; };
 		1CDBC6872299743800D19EDE /* BarCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CDBC6852299743800D19EDE /* BarCollectionViewCell.xib */; };
+		1CEB927B22AA5E5D003D1DB5 /* StackedBarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CEB927A22AA5E5D003D1DB5 /* StackedBarChartView.swift */; };
+		1CEB927D22AA5E94003D1DB5 /* StackedBarChart.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CEB927C22AA5E94003D1DB5 /* StackedBarChart.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1C35583D22AA5F7A0049B06D /* StackedBarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackedBarCollectionViewCell.swift; sourceTree = "<group>"; };
+		1C35583E22AA5F7A0049B06D /* StackedBarCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StackedBarCollectionViewCell.xib; sourceTree = "<group>"; };
+		1C35584122AA64460049B06D /* StackedBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackedBarViewController.swift; sourceTree = "<group>"; };
 		1C73522C2296FD9900690A1F /* Charts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Charts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C73522F2296FD9900690A1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1C7352312296FD9900690A1F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -38,6 +46,8 @@
 		1CDBC682229973AC00D19EDE /* BarChart.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BarChart.xib; sourceTree = "<group>"; };
 		1CDBC6842299743800D19EDE /* BarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarCollectionViewCell.swift; sourceTree = "<group>"; };
 		1CDBC6852299743800D19EDE /* BarCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BarCollectionViewCell.xib; sourceTree = "<group>"; };
+		1CEB927A22AA5E5D003D1DB5 /* StackedBarChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackedBarChartView.swift; sourceTree = "<group>"; };
+		1CEB927C22AA5E94003D1DB5 /* StackedBarChart.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StackedBarChart.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +61,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1C35583C22AA5F3B0049B06D /* StackedBarCell */ = {
+			isa = PBXGroup;
+			children = (
+				1C35583D22AA5F7A0049B06D /* StackedBarCollectionViewCell.swift */,
+				1C35583E22AA5F7A0049B06D /* StackedBarCollectionViewCell.xib */,
+			);
+			path = StackedBarCell;
+			sourceTree = "<group>";
+		};
+		1C35584322AA6B300049B06D /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				1C7352312296FD9900690A1F /* ViewController.swift */,
+				1C35584122AA64460049B06D /* StackedBarViewController.swift */,
+				1C8849CA229AAFA800111D7D /* PieChartViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		1C7352232296FD9900690A1F = {
 			isa = PBXGroup;
 			children = (
@@ -72,8 +101,7 @@
 			children = (
 				1CDBC67E2299735500D19EDE /* Charts */,
 				1C73522F2296FD9900690A1F /* AppDelegate.swift */,
-				1C7352312296FD9900690A1F /* ViewController.swift */,
-				1C8849CA229AAFA800111D7D /* PieChartViewController.swift */,
+				1C35584322AA6B300049B06D /* ViewControllers */,
 				1C8849CC229AC12300111D7D /* DrawView.swift */,
 				1C7352332296FD9900690A1F /* Main.storyboard */,
 				1C7352412297187100690A1F /* CollectionViewCell.swift */,
@@ -95,6 +123,7 @@
 		1CDBC67E2299735500D19EDE /* Charts */ = {
 			isa = PBXGroup;
 			children = (
+				1CEB927922AA5E20003D1DB5 /* StackedBarChart */,
 				1C8849CE229AF37900111D7D /* PieChart */,
 				1CDBC67F2299737200D19EDE /* BarChart */,
 			);
@@ -118,6 +147,16 @@
 				1CDBC6852299743800D19EDE /* BarCollectionViewCell.xib */,
 			);
 			path = BarCell;
+			sourceTree = "<group>";
+		};
+		1CEB927922AA5E20003D1DB5 /* StackedBarChart */ = {
+			isa = PBXGroup;
+			children = (
+				1C35583C22AA5F3B0049B06D /* StackedBarCell */,
+				1CEB927A22AA5E5D003D1DB5 /* StackedBarChartView.swift */,
+				1CEB927C22AA5E94003D1DB5 /* StackedBarChart.xib */,
+			);
+			path = StackedBarChart;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,8 +219,10 @@
 			files = (
 				1CDBC683229973AC00D19EDE /* BarChart.xib in Resources */,
 				1CDBC6872299743800D19EDE /* BarCollectionViewCell.xib in Resources */,
+				1C35584022AA5F7A0049B06D /* StackedBarCollectionViewCell.xib in Resources */,
 				1C73523A2296FD9B00690A1F /* LaunchScreen.storyboard in Resources */,
 				1C7352372296FD9B00690A1F /* Assets.xcassets in Resources */,
+				1CEB927D22AA5E94003D1DB5 /* StackedBarChart.xib in Resources */,
 				1C7352352296FD9900690A1F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -196,8 +237,11 @@
 				1C8849D0229AF3A700111D7D /* PieChartView.swift in Sources */,
 				1C8849CB229AAFA800111D7D /* PieChartViewController.swift in Sources */,
 				1C7352322296FD9900690A1F /* ViewController.swift in Sources */,
+				1CEB927B22AA5E5D003D1DB5 /* StackedBarChartView.swift in Sources */,
 				1C8849CD229AC12300111D7D /* DrawView.swift in Sources */,
 				1C7352302296FD9900690A1F /* AppDelegate.swift in Sources */,
+				1C35584222AA64460049B06D /* StackedBarViewController.swift in Sources */,
+				1C35583F22AA5F7A0049B06D /* StackedBarCollectionViewCell.swift in Sources */,
 				1C7352422297187100690A1F /* CollectionViewCell.swift in Sources */,
 				1CDBC6812299739200D19EDE /* BarChartView.swift in Sources */,
 				1CDBC6862299743800D19EDE /* BarCollectionViewCell.swift in Sources */,

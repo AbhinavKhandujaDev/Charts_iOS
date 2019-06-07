@@ -29,5 +29,4 @@ class BarCollectionViewCell: UICollectionViewCell {
         valueBarView.setGradientColor(bounds: valueBarView.bounds, colors: colors)
         valueLabel.text = "\(value)"
     }
-
 }

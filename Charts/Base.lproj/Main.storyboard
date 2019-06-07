@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="iBC-tD-XQ8">
-                                <rect key="frame" x="112.5" y="315.5" width="150" height="100"/>
+                                <rect key="frame" x="112.5" y="290.5" width="150" height="150"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uUB-bg-Xob">
                                         <rect key="frame" x="0.0" y="0.0" width="150" height="40"/>
@@ -32,8 +32,15 @@
                                             <segue destination="BYZ-38-t0r" kind="show" id="Ppq-Sn-pp0"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cqs-8G-334">
+                                        <rect key="frame" x="12" y="60" width="126" height="30"/>
+                                        <state key="normal" title="Stacked Bar Chart"/>
+                                        <connections>
+                                            <segue destination="mt8-i3-ROG" kind="show" id="bno-s7-cfp"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vjc-7v-4tD">
-                                        <rect key="frame" x="0.0" y="60" width="150" height="40"/>
+                                        <rect key="frame" x="0.0" y="110" width="150" height="40"/>
                                         <state key="normal" title="Pie Chart"/>
                                         <connections>
                                             <segue destination="o15-tq-cVr" kind="show" id="f2n-hv-LaC"/>
@@ -157,7 +164,39 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="878" y="-296"/>
+            <point key="canvasLocation" x="-814" y="1003"/>
+        </scene>
+        <!--Stacked Bar View Controller-->
+        <scene sceneID="5yp-8j-A59">
+            <objects>
+                <viewController id="mt8-i3-ROG" customClass="StackedBarViewController" customModule="Charts" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LSJ-Zy-aA1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hDW-3B-1Go" customClass="StackedBarChartView" customModule="Charts" customModuleProvider="target">
+                                <rect key="frame" x="16" y="115.5" width="343" height="500"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="500" id="WVa-VK-jkC"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="hDW-3B-1Go" firstAttribute="centerY" secondItem="6AC-zl-HUs" secondAttribute="centerY" id="XEa-RD-UMH"/>
+                            <constraint firstItem="hDW-3B-1Go" firstAttribute="leading" secondItem="6AC-zl-HUs" secondAttribute="leading" constant="16" id="Z8g-tD-Z6S"/>
+                            <constraint firstItem="6AC-zl-HUs" firstAttribute="trailing" secondItem="hDW-3B-1Go" secondAttribute="trailing" constant="16" id="s1i-0V-uYF"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6AC-zl-HUs"/>
+                    </view>
+                    <connections>
+                        <outlet property="stackedBarView" destination="hDW-3B-1Go" id="yUl-7Y-Z6L"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qwX-6M-z28" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="23" y="1003"/>
         </scene>
         <!--Pie Chart View Controller-->
         <scene sceneID="tAh-1J-Pd3">
@@ -189,7 +228,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aI9-fd-cCu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="878" y="619"/>
+            <point key="canvasLocation" x="908" y="1003"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9eM-2U-qI4">

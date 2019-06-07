@@ -25,28 +25,29 @@
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lfd-7g-xrJ">
                         <rect key="frame" x="0.0" y="332" width="127" height="80"/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xne-Vj-0X9">
+                                <rect key="frame" x="48" y="33" width="31.5" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.3502153754234314" green="0.77533435821533203" blue="0.62818747758865356" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Xne-Vj-0X9" firstAttribute="centerX" secondItem="lfd-7g-xrJ" secondAttribute="centerX" id="4hS-lG-H36"/>
+                            <constraint firstItem="Xne-Vj-0X9" firstAttribute="centerY" secondItem="lfd-7g-xrJ" secondAttribute="centerY" id="Nj4-Rp-e1v"/>
                             <constraint firstAttribute="height" constant="80" id="jOk-SM-HJS"/>
                         </constraints>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xne-Vj-0X9">
-                        <rect key="frame" x="0.0" y="15" width="127" height="12"/>
-                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="10"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                 </subviews>
             </view>
             <constraints>
                 <constraint firstItem="9dg-lz-zdS" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" id="B6w-km-pmM"/>
                 <constraint firstItem="9dg-lz-zdS" firstAttribute="centerY" secondItem="ZTg-uK-7eu" secondAttribute="centerY" id="C3R-cc-DXx"/>
-                <constraint firstItem="Xne-Vj-0X9" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="Hyu-8z-XRY"/>
                 <constraint firstItem="lfd-7g-xrJ" firstAttribute="centerX" secondItem="9dg-lz-zdS" secondAttribute="centerX" id="Raa-f2-tNF"/>
                 <constraint firstAttribute="bottom" secondItem="lfd-7g-xrJ" secondAttribute="bottom" id="UTj-M4-aat"/>
-                <constraint firstItem="Xne-Vj-0X9" firstAttribute="width" secondItem="9dg-lz-zdS" secondAttribute="width" id="Xkj-7b-nVU"/>
                 <constraint firstItem="9dg-lz-zdS" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" id="bNf-vw-9ZL"/>
-                <constraint firstItem="Xne-Vj-0X9" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="15" id="pLY-KW-B74"/>
                 <constraint firstItem="lfd-7g-xrJ" firstAttribute="width" secondItem="9dg-lz-zdS" secondAttribute="width" id="shU-vt-wQA"/>
                 <constraint firstItem="9dg-lz-zdS" firstAttribute="centerX" secondItem="ZTg-uK-7eu" secondAttribute="centerX" id="vGO-Th-Rvn"/>
             </constraints>

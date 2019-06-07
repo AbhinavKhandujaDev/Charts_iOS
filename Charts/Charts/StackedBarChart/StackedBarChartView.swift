@@ -1,20 +1,20 @@
 //
-//  BarChartView.swift
+//  StackedBarChartView.swift
 //  Charts
 //
-//  Created by abhinav khanduja on 25/05/19.
+//  Created by abhinav khanduja on 07/06/19.
 //  Copyright © 2019 abhinav khanduja. All rights reserved.
 //
 
 import UIKit
 
-class BarChartView: UIView {
+class StackedBarChartView: UIView {
 
     @IBOutlet var contentView: UIView!
     
-    @IBOutlet weak var barCollectionView: UICollectionView!
-    
-    var barValues : [Double] = []
+    @IBOutlet weak var stackedBarCollectionView: UICollectionView!
+
+    var stackedBarVals : [[Double]] = []
     
     var colors : [CGColor] = []
     
@@ -39,34 +39,36 @@ class BarChartView: UIView {
     }
     
     func setView() {
-        Bundle.main.loadNibNamed("BarChart", owner: self, options: nil)
+        Bundle.main.loadNibNamed("StackedBarChart", owner: self, options: nil)
         addSubview(contentView)
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         
-        barCollectionView.delegate = self
-        barCollectionView.dataSource = self
-        barCollectionView.register(UINib(nibName: "BarCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "barCell")
+        stackedBarCollectionView.delegate = self
+        stackedBarCollectionView.dataSource = self
+        stackedBarCollectionView.register(UINib(nibName: "StackedBarCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "stackedBarCell")
     }
     
 }
 
-extension BarChartView : UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+extension StackedBarChartView : UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return barValues.count//barValues.count
+        return stackedBarVals.count//barValues.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "barCell", for: indexPath) as! BarCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "stackedBarCell", for: indexPath) as! StackedBarCollectionViewCell
         
-        let val = barValues[indexPath.row]
-        cell.setCell(value: CGFloat(val), maxVal: CGFloat(barValues.max() ?? 1), colors: colors)
+        let bStack = StackStruct(barValue: CGFloat(stackedBarVals[indexPath.row][0]), maxValue: CGFloat(stackedBarVals[indexPath.row].max()!))
+        let mStack = StackStruct(barValue: CGFloat(stackedBarVals[indexPath.row][1]), maxValue: CGFloat(stackedBarVals[indexPath.row].max()!))
+        let tStack = StackStruct(barValue: CGFloat(stackedBarVals[indexPath.row][2]), maxValue: CGFloat(stackedBarVals[indexPath.row].max()!))
         
+        cell.setStacks(bottomStack: bStack, midStack: mStack, topStack: tStack)
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: barCellWidth, height: barCollectionView.frame.height - 64)
+        return CGSize(width: barCellWidth, height: stackedBarCollectionView.frame.height - 64)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -77,8 +79,8 @@ extension BarChartView : UICollectionViewDataSource, UICollectionViewDelegate, U
         
         collectionView.collectionViewLayout.invalidateLayout()
         
-        let totalCellWidth = barCellWidth * CGFloat(barValues.count)
-        let totalSpacingWidth = barCellSpacing * (CGFloat(barValues.count) - 1)
+        let totalCellWidth = barCellWidth * CGFloat(stackedBarVals.count)
+        let totalSpacingWidth = barCellSpacing * (CGFloat(stackedBarVals.count) - 1)
         
         if totalCellWidth+totalSpacingWidth > collectionView.frame.width {
             return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
@@ -89,5 +91,4 @@ extension BarChartView : UICollectionViewDataSource, UICollectionViewDelegate, U
         
         return UIEdgeInsets(top: 0, left: leftInset, bottom: 0, right: rightInset)
     }
-    
 }
